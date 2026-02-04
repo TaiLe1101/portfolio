@@ -3,11 +3,11 @@ import { Timeline } from "@/components/timeline/timeline";
 
 export function Experience() {
   return (
-    <Container className="pt-16">
+    <Container>
       <div>
         <div>
           <div className="flex items-start gap-x-4">
-            <div className="w-[calc(32%-16px)]">
+            <div className="w-[calc(32%-16px)] sticky top-20 self-start">
               <p className="font-bold text-[48px]">Kinh nghiệm làm việc</p>
               <p className="mt-2">
                 Kinh nghiệm nghề nghiệp của tôi và giá trị tôi đã mang lại cho

@@ -11,7 +11,7 @@ export function MainLayout({ children }: MainLayoutProps) {
     <>
       <Header />
       <main className="mt-17">{children}</main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

@@ -18,7 +18,7 @@ export function BackgroundMode({ children }: BackgroundModeProps) {
 
   if (!mounted) {
     return (
-      <div className="min-h-screen w-full bg-black relative">
+      <div className="py-20 min-h-screen w-full bg-black relative">
         {/* Deep Ocean Glow */}
         <div
           className="absolute inset-0 z-0"
@@ -33,7 +33,7 @@ export function BackgroundMode({ children }: BackgroundModeProps) {
   }
 
   return resolvedTheme === "dark" ? (
-    <div className="min-h-screen w-full bg-black relative">
+    <div className="py-20 min-h-screen w-full bg-black relative">
       {/* Deep Ocean Glow */}
       <div
         className="absolute inset-0 z-0"
@@ -45,7 +45,7 @@ export function BackgroundMode({ children }: BackgroundModeProps) {
       <div className="relative z-10">{children}</div>
     </div>
   ) : (
-    <div className="min-h-screen w-full relative bg-white">
+    <div className="py-20 min-h-screen w-full relative bg-white">
       {/* Cool Blue Glow Right */}
       <div
         className="absolute inset-0 z-0"

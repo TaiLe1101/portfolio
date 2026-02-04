@@ -1,10 +1,10 @@
 import { BackgroundGrid } from "@/app/components/hero/components/background-grid/background-grid";
 import { TypingText } from "@/app/components/hero/components/typing-text/typing-text";
 import { Container } from "@/components/container/container";
-import Image from "next/image";
+import { GenerateLogoBrand } from "@/components/generate-logo-brand/generate-logo-brand";
 import { GlitchText } from "@/components/glitch-text/glitch-text";
 import { TiltCard } from "@/components/tilt-card/tilt-card";
-import { GenerateLogoBrand } from "@/components/generate-logo-brand/generate-logo-brand";
+import Image from "next/image";
 
 export function Hero() {
   return (
