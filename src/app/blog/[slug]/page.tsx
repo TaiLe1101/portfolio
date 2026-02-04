@@ -3,6 +3,14 @@ import { BlogCard } from "@/components/blog-card/blog-card";
 import BlurText from "@/components/BlurText";
 import { Container } from "@/components/container/container";
 import ShinyText from "@/components/ShinyText";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -26,6 +34,19 @@ import Link from "next/link";
 export default function DetailBlogPage() {
   return (
     <Container>
+      <div className="ml-[15%]">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/blog">Blog</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>Tìm hiểu về React Hooks</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </div>
       <div className="flex items-start">
         <div className="w-[calc(15%)] sticky top-20 p-2">
           <p className="text-[16px] font-bold">
@@ -61,7 +82,10 @@ export default function DetailBlogPage() {
             <div className="flex items-center justify-between">
               {/* Avatar */}
               <div className="flex items-start gap-x-4">
-                <div className="w-15 h-15 rounded-full p-1 bg-black/10 dark:bg-white/50 overflow-hidden">
+                <Link
+                  href="/resume"
+                  className="block w-15 h-15 rounded-full p-1 bg-black/10 dark:bg-white/50 overflow-hidden"
+                >
                   <Image
                     src="/images/devt.jpg"
                     alt="DevT"
@@ -69,7 +93,7 @@ export default function DetailBlogPage() {
                     height={60}
                     className="w-full h-full rounded-[inherit]"
                   ></Image>
-                </div>
+                </Link>
 
                 <div>
                   <div className="flex items-center gap-x-1">
@@ -306,9 +330,9 @@ export default function DetailBlogPage() {
         </div>
         <div className="w-[calc(25%)] sticky top-20 p-2">
           <div>
-            <p className="text-[16px]">Các bài viết có thể bạn sẽ thích</p>
+            <p className="text-[16px]">Các bài viết liên quan</p>
 
-            <div className="flex flex-col gap-y-2">
+            <div className="mt-4 flex flex-col gap-y-2">
               <div>
                 <BlogCard></BlogCard>
               </div>
