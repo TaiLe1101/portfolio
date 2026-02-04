@@ -1,3 +1,6 @@
+import CommentWithGithub from "@/app/blog/components/comment-with-github/comment-with-github";
+import { BlogCard } from "@/components/blog-card/blog-card";
+import BlurText from "@/components/BlurText";
 import { Container } from "@/components/container/container";
 import ShinyText from "@/components/ShinyText";
 import { Button } from "@/components/ui/button";
@@ -9,25 +12,48 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Separator } from "@/components/ui/separator";
-import { AtSign, Ellipsis, Facebook, Link, Twitter } from "lucide-react";
+import {
+  AtSign,
+  Ellipsis,
+  Facebook,
+  Link as LinkIcon,
+  SquareTerminal,
+  Twitter,
+} from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function DetailBlogPage() {
   return (
     <Container>
-      <div className="flex items-start min-h-screen">
-        <div className="w-[calc(20%)] sticky top-20 p-2">
-          <h3 className="text-[16px]">Lê Trần Tấn Tài</h3>
-          <p className="text-[14px]">Tôi là kỹ sư phần mềm</p>
+      <div className="flex items-start">
+        <div className="w-[calc(15%)] sticky top-20 p-2">
+          <p className="text-[16px] font-bold">
+            <Link href="/resume">Lê Trần Tấn Tài</Link>
+          </p>
+          <p className="flex items-center gap-x-2 text-[14px] mt-2">
+            Tôi là kỹ sư phần mềm <SquareTerminal />
+          </p>
           <Separator className="my-4" />
         </div>
 
         <div className="w-[calc(60%)] p-2">
           <section>
-            <h1 className="mb-6">Tìm hiểu về React Hooks</h1>
-            <p className="font-light">
-              React Hooks là một tính năng mạnh mẽ giúp bạn sử dụng state và các
-              tính năng khác của React mà không cần viết class.
+            <h1 className="mb-6">
+              <BlurText
+                text="Tìm hiểu về React Hooks Tìm hiểu về React Hooks Tìm hiểu về React Hooks Tìm hiểu về React Hooks Tìm hiểu về React Hooks Tìm hiểu về React Hooks Tìm hiểu về React Hooks"
+                delay={200}
+                animateBy="words"
+                direction="top"
+              />
+            </h1>
+            <p className="font-semibold text-[16px] text-blue-400">
+              <BlurText
+                text="React Hooks là một tính năng mạnh mẽ giúp bạn sử dụng state và các tính năng khác của React mà không cần viết class."
+                delay={200}
+                animateBy="words"
+                direction="top"
+              />
             </p>
           </section>
 
@@ -47,13 +73,15 @@ export default function DetailBlogPage() {
 
                 <div>
                   <div className="flex items-center gap-x-1">
-                    <ShinyText
-                      text="Lê Trần Tấn Tài"
-                      speed={2}
-                      delay={0}
-                      spread={120}
-                      className="text-[16px] font-semibold"
-                    />
+                    <Link href="/resume">
+                      <ShinyText
+                        text="Lê Trần Tấn Tài"
+                        speed={2}
+                        delay={0}
+                        spread={120}
+                        className="text-[16px] font-semibold"
+                      />
+                    </Link>
                     <span className="mb-1">👑</span>
                   </div>
                   <p className="mt-2 text-[14px] font-light text-black/50 dark:text-gray-300">
@@ -83,7 +111,7 @@ export default function DetailBlogPage() {
                         <AtSign /> Chia sẻ bài viết với Email
                       </DropdownMenuItem>
                       <DropdownMenuItem className="cursor-pointer">
-                        <Link /> Sao chép liên kết bài viết
+                        <LinkIcon /> Sao chép liên kết bài viết
                       </DropdownMenuItem>
                     </DropdownMenuGroup>
                   </DropdownMenuContent>
@@ -271,10 +299,26 @@ export default function DetailBlogPage() {
             accusantium non laudantium maiores veniam repellat exercitationem
             molestiae animi quidem eius dolorem.
           </section>
+
+          <section>
+            <CommentWithGithub />
+          </section>
         </div>
-        <div className="w-[calc(20%)] sticky top-20 p-2">
+        <div className="w-[calc(25%)] sticky top-20 p-2">
           <div>
-            <h4 className="text-[16px]">Các bài viết có thể bạn sẽ thích</h4>
+            <p className="text-[16px]">Các bài viết có thể bạn sẽ thích</p>
+
+            <div className="flex flex-col gap-y-2">
+              <div>
+                <BlogCard></BlogCard>
+              </div>
+              <div>
+                <BlogCard></BlogCard>
+              </div>
+              <div>
+                <BlogCard></BlogCard>
+              </div>
+            </div>
           </div>
         </div>
       </div>
