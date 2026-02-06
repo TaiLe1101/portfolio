@@ -74,6 +74,7 @@ export default function DetailBlogPage() {
                 delay={200}
                 animateBy="words"
                 direction="top"
+                as="span"
               />
             </p>
           </section>
