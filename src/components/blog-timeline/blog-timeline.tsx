@@ -4,55 +4,12 @@ import { Post } from "@/types/post";
 import { Clock } from "lucide-react";
 import Link from "next/link";
 
-const POSTS: Post[] = [
-  {
-    id: 1,
-    title: "Tìm hiểu về React Hooks",
-    slug: "tim-hieu-ve-react-hooks",
-    thumbnailUrl: "",
-    description:
-      "React Hooks là một tính năng mạnh mẽ giúp bạn sử dụng state và các tính năng khác của React mà không cần viết class.",
-    content: "",
-    categoryId: "1",
-    createdAt: new Date("2026-01-11"),
-    updatedAt: new Date("2026-01-11"),
-    category: {
-      id: 1,
-      name: "Lập trình",
-      slug: "lap-trinh",
-      createdAt: new Date("2025-12-01"),
-      updatedAt: new Date("2025-12-01"),
-    },
-  },
-  {
-    id: 2,
-    title:
-      "Sử dụng AI trong phát triển phần mềm React Hooks là một tính năng mạnh mẽ giúp bạn sử dụng state và các tính năng khác của React mà không cần viết class.",
-    slug: "su-dung-ai-trong-phat-trien-phan-mem",
-    thumbnailUrl: "",
-    description:
-      "React Hooks là một tính năng mạnh mẽ giúp bạn sử dụng state và các tính năng khác của React mà không cần viết class.",
-    content: "",
-    categoryId: "1",
-    createdAt: new Date("2026-01-11"),
-    updatedAt: new Date("2026-01-11"),
-    category: {
-      id: 1,
-      name: "Lập trình",
-      slug: "lap-trinh",
-      createdAt: new Date("2025-12-01"),
-      updatedAt: new Date("2025-12-01"),
-    },
-  },
-];
+const POSTS: Post[] = [];
 
 export function BlogTimeline() {
   return (
     <div className="max-w-(--breakpoint-sm)">
       <div className="relative">
-        {/* Timeline line */}
-        {/* <div className="absolute left-0 top-3 bottom-0 border-l-2" /> */}
-
         {POSTS.map((post, index) => (
           <div className="group relative" key={index}>
             {/* Content */}
